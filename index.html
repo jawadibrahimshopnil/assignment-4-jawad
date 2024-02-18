@@ -14,6 +14,10 @@
   <!-- daisy and tailwind -->
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- daisy and tail offline -->
+  <link rel="stylesheet" href="./src/offline/daisyui.css">
+  <script src="./src/offline/tailwind.js"></script>
+
   <script>
     tailwind.config = {
       theme: {
@@ -32,7 +36,7 @@
 
 <body>
   <!-- navbar section -->
-  <div class="navbar bg-base-100 max-w-6xl mx-auto mt-12 p-0">
+  <div class="navbar bg-base-100 max-w-[73.12rem] mx-auto mt-12 p-0">
     <div class="navbar-start">
       <div class="dropdown">
         <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -47,7 +51,7 @@
           <li><a>Search</a></li>
         </ul>
       </div>
-      <a class="btn btn-ghost font-extrabold text-4xl text-FBlack">P-Ticket</a>
+      <a class="btn btn-ghost font-extrabold text-4xl text-FBlack border">P-Ticket</a>
     </div>
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1">
@@ -58,10 +62,55 @@
       </ul>
     </div>
     <div class="navbar-end">
-      <a class="btn bg-PGreen10 text-PGreen px-8 py-4 font-['Raleway'] font-bold font text-xl h-14 rounded-xl boder">Bus <img src="./images/icons/bus-icon.png"></a>
+      <a class="btn bg-PGreen10 text-PGreen px-8 py-4 font-['Raleway'] font-bold font text-xl h-14 rounded-xl border-PGreen">Bus <img src="./images/icons/bus-icon.png"></a>
     </div>
   </div>
 
+    <!-- hero section -->
+    <section class="hero max-w-[73.12rem] mx-auto mt-9 px-[215px] pt-[70px] pb-[135px] rounded-[2rem] bg-cover bg-center bg-no-repeat"
+      style="background-image: url(./images/herobg.png);">
+      <div class="hero-content text-center text-white">
+        <div class="max-w-3xl">
+          <h1 class="mb-4 font-['Raleway'] font-extrabold text-6xl ">End-to-End Travel with<br><span
+              class="text-PGreen">P Paribahan</span></h1>
+          <p class="mb-8 text-xl font-['Inter'] font-normal">Yes, you can run unit tests and view the results directly within the
+            app. The integrated testing features allow for a streamlined .</p>
+          <button class="btn bg-PGreen text-xl font-bold border-none px-8 py-5 h-auto">Buy Tickets</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Best offer section -->
+    <section class="mt-32 max-w-[73.12rem] mx-auto">
+      <h1 class="text-4xl font-bold text-center mb-12">Best offers for you</h1>
+      <div class="flex justify-between">
+        <div class="flex bg-[#FFBF0F] rounded-3xl">
+          <div class="p-12">
+            <h1 class="font-[Inter] text-[40px] font-extrabold">15% OFF</h1>
+            <p class="text-xl font-semibold">on your next purchase</p>
+            <p class="text-lg font-medium text-[#03071280]/[0.5]">use by January 2024</p>
+          </div>
+          <img src="./images/cupon-devider.svg" alt="">
+          <div class="px-8 py-16">
+            <h1 class="text-3xl font-bold">NEW15</h1>
+            <p class="text-xl font-medium text-[#03071280]/[0.5]">Coupon Code</p>
+          </div>
+        </div>
+        <div class="flex bg-[#F78C9C] rounded-3xl">
+          <div class="p-12">
+            <h1 class="font-[Inter] text-[40px] font-extrabold">20% OFF</h1>
+            <p class="text-xl font-semibold">on your next purchase</p>
+            <p class="text-lg font-medium text-[#03071280]/[0.5]">use by January 2024</p>
+          </div>
+          <img src="./images/cupon-devider.svg" alt="">
+          <div class="px-8 py-16">
+            <h1 class="text-3xl font-bold">Couple 20</h1>
+            <p class="text-xl font-medium text-[#03071280]/[0.5]">Coupon Code</p>
+          </div>
+        </div>
+      </div>
+      <button class="btn bg-transparent border-PGreen text-PGreen text-xl font-bold h-auto block m-auto mt-16 px-8 py-5">See All Offers</button>
+    </section>
 
   <script src="./src/index.js"></script>
 </body>

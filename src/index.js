@@ -6,6 +6,7 @@ for (const seat of seats) {
         let isSelected = selectedSeat.classList.contains("bg-PGreen");
         let seatLeft = document.getElementById("seatLeft");
         let formSeatCount = document.getElementById("formSeatCount");
+        let totalPrice = document.getElementById("totalPrice");
 
         let appendTag = document.getElementById("appedSeatTag");
         let seatTagHtml = `
@@ -24,6 +25,8 @@ for (const seat of seats) {
             if(document.getElementById(`selectedSeat${selectedSeatCount}`) !== null){
                 document.getElementById(`selectedSeat${selectedSeatCount}`).remove();
             }
+            
+            totalPrice.innerText = parseInt(totalPrice.innerText) - 550;
             seatLeft.innerText = parseInt(seatLeft.innerText) + 1;
             formSeatCount.innerText = parseInt(formSeatCount.innerText) - 1;
             selectedSeatCount -= 1;
@@ -32,6 +35,7 @@ for (const seat of seats) {
             selectedSeat.classList.add("bg-[#F7F8F8]");
             selectedSeat.classList.remove("text-white");
         } else {
+            totalPrice.innerText = parseInt(totalPrice.innerText) + 550;
             appendTag.insertAdjacentHTML('beforeend', seatTagHtml);
             seatLeft.innerText = parseInt(seatLeft.innerText) - 1;
             formSeatCount.innerText = parseInt(formSeatCount.innerText) + 1;
@@ -48,8 +52,6 @@ for (const seat of seats) {
 let nextBTN = document.getElementById("nextBTN");
 let modal = document.getElementById("modal");
 let mainPage = document.getElementById("mainPage");
-
-console.log(number)
 
 document.getElementById("nextBTN").addEventListener('click', function(){
     let number = document.getElementById("number").value != "";

@@ -6,7 +6,6 @@ for (const seat of seats) {
         let isSelected = selectedSeat.classList.contains("bg-PGreen");
         let seatLeft = document.getElementById("seatLeft");
         let formSeatCount = document.getElementById("formSeatCount");
-        let number = document.getElementById("number").value != "";
 
         let appendTag = document.getElementById("appedSeatTag");
         let seatTagHtml = `
@@ -48,4 +47,20 @@ for (const seat of seats) {
 }
 
 let nextBTN = document.getElementById("nextBTN");
+let modal = document.getElementById("modal");
+let mainPage = document.getElementById("mainPage");
+
+document.getElementById("nextBTN").addEventListener('click', function(event){
+    
+    if(selectedSeatCount > 0){
+        nextBTN.classList.remove("bg-gray-200");
+        nextBTN.classList.add("bg-PGreen");
+
+        mainPage.setAttribute("hidden", "")
+        modal.classList("hidden")
+
+    }else{
+        return;
+    }
+});
         

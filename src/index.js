@@ -42,7 +42,6 @@ for (const seat of seats) {
             selectedSeat.classList.add("text-white");
         }
 
-        console.log(selectedSeat, seatTagHtml);
     });
 }
 
@@ -50,16 +49,20 @@ let nextBTN = document.getElementById("nextBTN");
 let modal = document.getElementById("modal");
 let mainPage = document.getElementById("mainPage");
 
-document.getElementById("nextBTN").addEventListener('click', function(event){
-    
-    if(selectedSeatCount > 0){
+console.log(number)
+
+document.getElementById("nextBTN").addEventListener('click', function(){
+    let number = document.getElementById("number").value != "";
+    if(number && selectedSeatCount > 0){
+        
         nextBTN.classList.remove("bg-gray-200");
         nextBTN.classList.add("bg-PGreen");
 
-        mainPage.setAttribute("hidden", "")
-        modal.classList("hidden")
+        mainPage.setAttribute("hidden", "");
+        modal.removeAttribute("hidden");
 
     }else{
+        console.log("ok");
         return;
     }
 });

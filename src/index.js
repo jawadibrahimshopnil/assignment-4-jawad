@@ -1,12 +1,13 @@
 let seats = document.getElementsByClassName("seat");
 var selectedSeatCount = 0;
+let totalPrice = document.getElementById("totalPrice");
 for (const seat of seats) {
     seat.addEventListener("click", function (event) {
         let selectedSeat = event.target;
         let isSelected = selectedSeat.classList.contains("bg-PGreen");
         let seatLeft = document.getElementById("seatLeft");
         let formSeatCount = document.getElementById("formSeatCount");
-        let totalPrice = document.getElementById("totalPrice");
+        
 
         let appendTag = document.getElementById("appedSeatTag");
         let seatTagHtml = `
@@ -56,16 +57,33 @@ let mainPage = document.getElementById("mainPage");
 document.getElementById("nextBTN").addEventListener('click', function(){
     let number = document.getElementById("number").value != "";
     if(number && selectedSeatCount > 0){
-        
         nextBTN.classList.remove("bg-gray-200");
         nextBTN.classList.add("bg-PGreen");
 
-        mainPage.setAttribute("hidden", "");
-        modal.removeAttribute("hidden");
+        mainPage.classList.add("hidden");
+        modal.classList.remove("hidden");
 
     }else{
         console.log("ok");
         return;
     }
 });
-        
+
+let grandTotal = document.getElementById("grandTotal");
+let couppnBtn = document.getElementById("cpnBtn");
+
+couppnBtn.addEventListener('click', function(){
+    let couppn = document.getElementById("cpn").value;
+    let totalPrice = parseInt(document.getElementById("totalPrice").innerText);
+    
+    if(selectedSeatCount == 4){
+        console.log(couppn);
+        if(couppn == "NEW15"){
+            grandTotal.innerText = totalPrice - ( totalPrice * 0.15);
+
+        }else if(couppn == "Couple 20"){
+            grandTotal.innerText = totalPrice - ( totalPrice * 0.20);
+        }
+    }
+    
+})

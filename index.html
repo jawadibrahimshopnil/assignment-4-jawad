@@ -313,13 +313,13 @@
             </div>
             <div>
               <label class="input input-bordered flex items-center gap-2 mb-6">
-                <input type="text" class="grow" placeholder="Have any Coupon" />
-                <span class="bg-PGreen text-white py-2 px-4 rounded-xl">Apply</span>
+                <input id="cpn" type="text" class="grow" placeholder="Have any Coupon" />
+                <span id="cpnBtn" class="bg-PGreen text-white py-2 px-4 rounded-xl">Apply</span>
               </label>
             </div>
             <div class="flex justify-between font-medium">
               <p>Grand Total</p>
-              <p>BDT <span id="">0</span></p>
+              <p>BDT <span id="grandTotal">0</span></p>
               
             </div>
           </div>
@@ -350,7 +350,7 @@
   </main>
   <footer></footer>
 </div>
-<div id="modal" class="w-full h-[100vh] grid bg-[#b9b9b9]" hidden>
+<div id="modal" class="w-full h-[100vh] grid bg-[#b9b9b9] hidden">
   <div class="hero  h-full place-items-center">
     <div class="hero-content text-center">
       <div class="grid place-items-center bg-white px-10 py-14 rounded-2xl">

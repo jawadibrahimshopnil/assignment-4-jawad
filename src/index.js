@@ -64,14 +64,8 @@ let mainPage = document.getElementById("mainPage");
 document.getElementById("nextBTN").addEventListener('click', function(){
     let number = document.getElementById("number").value != "";
     if(number && selectedSeatCount > 0){
-        nextBTN.classList.remove("bg-gray-200");
-        nextBTN.classList.add("bg-PGreen");
-
-        mainPage.classList.add("hidden");
-        modal.classList.remove("hidden");
-
+        my_modal_1.showModal();
     }else{
-        console.log("ok");
         return;
     }
 });
@@ -93,4 +87,11 @@ couppnBtn.addEventListener('click', function(){
         }
     }
     
+})
+
+document.getElementById("number").addEventListener('input', () => {
+    if(document.getElementById("number").value != "" && selectedSeatCount > 0){
+        nextBTN.classList.remove("bg-gray-200");
+        nextBTN.classList.add("bg-PGreen");
+    }
 })
